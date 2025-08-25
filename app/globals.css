@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Neue Montreal Bold";
+  src: url("../Assets/Font/Neue\ Montreal/NeueMontreal-Bold.otf");
+}
+
+@font-face {
+  font-family: "Neue Montreal Regular";
+  src: url("../Assets/Font/Neue\ Montreal/NeueMontreal-Regular.otf");
+}
+
+@font-face {
+  font-family: "Neue Montreal Medium";
+  src: url("../Assets/Font/Neue Montreal/NeueMontreal-Medium.otf");
+}
+
+.neue-regular {
+  font-family: "Neue Montreal Regular", sans-serif;
+}
+
+.neue-medium {
+  font-family: "Neue Montreal Medium", sans-serif;
+}
+
+.neue-bold {
+  font-family: "Neue Montreal Bold", sans-serif;
+}
