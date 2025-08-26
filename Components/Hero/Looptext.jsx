@@ -42,18 +42,23 @@ export default function Looptext() {
 
   return (
     // The Parent Container
-    <div className='absolute text-6xl bottom-0 w-full overflow-hidden  text-white neue-medium'>
+    <div className='absolute text-6xl sm:text-7xl lg:text-9xl bottom-0 w-full overflow-hidden  text-white neue-medium'>
       <div ref={slider} className='flex text-nowrap '>
         <h1 ref={firstText}>&nbsp;Ideate. Design. Build. Maintain.</h1>
         <h1 ref={secondText} className=''>
           &nbsp;Ideate. Design. Build. Maintain.{" "}
         </h1>
       </div>
-      <hr className='border-2 mt-2 ' /> 
-      <h1 className='text-center  bottom-10 pt-4 pb-7 text-lg text-white leading-5 neue-regular'>
-        A one stop service for <br />
-        your website needs
-      </h1>
+      {/* <hr className='border-2 mt-2 lg:hidden' /> */}
+      <div className="flex justify-center lg:justify-between pb-7 pt-4 px-7  lg:pt-4 lg:pb-6">
+        <h1 className='text-center text-lg text-white leading-5 neue-regular lg:pt-3 '>
+          A one stop service for <br className='lg:hidden' />
+          your website needs
+        </h1>
+        <h1 className="hidden lg:block text-lg pt-3">
+          Basen in indonesia
+        </h1>
+      </div>
     </div>
   );
 }
