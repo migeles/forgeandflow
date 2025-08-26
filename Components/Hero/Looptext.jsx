@@ -56,7 +56,7 @@ export default function Looptext() {
           your website needs
         </h1>
         <h1 className="hidden lg:block text-lg pt-3">
-          Basen in indonesia
+          Based in indonesia
         </h1>
       </div>
     </div>

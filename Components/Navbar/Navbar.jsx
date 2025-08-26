@@ -5,6 +5,7 @@ import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { useState, useRef } from "react";
 import Navmenu from "./Navmenu";
 import arrowdirect from "../../Assets/Image/arrow-redirect.png";
+import DesktopNav from "./DesktopNav"; // 👈 Import the new component
 
 gsap.registerPlugin(MorphSVGPlugin);
 
@@ -23,6 +24,7 @@ export default function Navbar() {
 
   useGSAP(
     () => {
+      // ... (your GSAP animation code remains unchanged)
       gsap.set("#cross", { display: "none" });
       gsap.set(navMenuRef.current, { opacity: 0, pointerEvents: "none" });
 
@@ -63,13 +65,15 @@ export default function Navbar() {
   return (
     <div
       ref={container}
-      className='flex h-20 justify-between items-center px-7 pt-3 rounded-[50px] fixed top-0 left-0 right-0 z-30 text-white '>
+      className='flex h-20 justify-between items-center px-7 pt-3 rounded-[50px] fixed top-0 left-0 right-0 z-30 text-white '
+    >
       <div className='relative z-20'>
         <h1 className='neue-bold text-2xl '>Forge & Flow</h1>
       </div>
       <div
         onClick={handleToggle}
-        className='cursor-pointer relative z-20 lg:hidden'>
+        className='cursor-pointer relative z-20 lg:hidden'
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='26'
@@ -79,22 +83,15 @@ export default function Navbar() {
           stroke='currentColor'
           strokeWidth='3'
           strokeLinecap='round'
-          strokeLinejoin='round'>
+          strokeLinejoin='round'
+        >
           <path id='equal' d='M3 8 H21 M3 16 H21'></path>
           <path id='cross' d='M6 6 L18 18 M18 6 L6 18'></path>
         </svg>
       </div>
-      <nav className="hidden lg:flex items-center">
-        <ul className="w-full flex flex-row gap-10 ">
-          {navLinks.map((link) => (
-            <li key={link.title}>
-              <a href={link.href} className="text-base hover:text-gray-300 transition-colors">
-                {link.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+
+      {/* 👇 Use the new DesktopNav component and pass the links as a prop */}
+      <DesktopNav navLinks={navLinks} />
 
       <Navmenu ref={navMenuRef} />
 
