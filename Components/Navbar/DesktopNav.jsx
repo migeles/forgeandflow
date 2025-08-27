@@ -30,40 +30,14 @@ export default function DesktopNav({ navLinks }) {
           gsap.to("#bghover", {
             x: offsetLeft,
             width: offsetWidth,
-            opacity: 1,
             duration: 0.3,
             ease: "power2.out",
             overwrite: "auto",
           });
 
           // Animate the hovered link's text to black
-
-          // Change all other links' text back to white
-          navItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-              gsap.to(otherItem.querySelector("a"), {
-                color: "#FFFFFF",
-                duration: 0.3,
-              });
-            }
-          });
-
-          // 3. Set a new 5-second timeout to hide the background
-          hideTimeoutRef.current = setTimeout(() => {
-            gsap.to("#bghover", {
-              opacity: 0,
-              duration: 0.5,
-              ease: "power2.out",
-            });
-            // Also fade all text back to white
-            gsap.to(navItems.map(item => item.querySelector('a')), {
-              color: "#FFFFFF",
-              duration: 0.5,
-            });
-          }, 3000); // 5000 milliseconds = 5 seconds
         });
       });
-
     },
     { dependencies: [navLinks] }
   );
@@ -76,18 +50,18 @@ export default function DesktopNav({ navLinks }) {
 
   return (
     <nav id='navbar-desktop' className='hidden lg:flex items-center'>
-      <ul ref={navContainerRef} className='w-full flex flex-row gap-12 relative'>
+      <ul
+        ref={navContainerRef}
+        className='w-full flex flex-row gap-12 relative group/ulcontainer'>
         <span
           id='bghover'
-          className='-z-10 bg-white/30 backdrop-blur-2xl h-10 absolute rounded-full top-1/2 -translate-y-1/2 pointer-events-none px-4 py-2'
-          style={{ width: "0px", opacity: 0 }}
-        ></span>
+          className='-z-10 bg-white backdrop-blur-2xl h-10 absolute rounded-full top-1/2 -translate-y-1/2 pointer-events-none opacity-0 px-4 py-2 group-hover/ulcontainer:opacity-100 transition-opacity duration-300 ease-in-out'
+          style={{ width: "0px"}}></span>
         {navLinks.map((link) => (
-          <li key={link.title} ref={addToRefs}>
+          <li key={link.title} ref={addToRefs} className='group'>
             <a
               href={link.href}
-              className='text-base transition-colors px-4 py-2'
-            >
+              className='text-base transition-colors px-4 py-2 group-hover:text-black'>
               {link.title}
             </a>
           </li>
