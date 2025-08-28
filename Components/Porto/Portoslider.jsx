@@ -23,6 +23,7 @@ const logos = [
 export default function Portoslider() {
   const firstimgcontainer = useRef(null);
   const secondimgcontainer = useRef(null);
+  const thirdimgcontainer = useRef(null);
   const sliderContainerRef = useRef(null);
   let xPercent = 0;
   let direction = 1;
@@ -43,15 +44,16 @@ export default function Portoslider() {
     }
     gsap.set(firstimgcontainer.current, { xPercent: xPercent });
     gsap.set(secondimgcontainer.current, { xPercent: xPercent });
+    gsap.set(thirdimgcontainer.current, { xPercent: xPercent });
     xPercent += -0.05 * direction;
     requestAnimationFrame(animation);
   };
 
   return (
-    <div className='w-full py-8 relative'>
+    <div className='w-full max-w-screen py-8 relative flex'>
       <div
         ref={sliderContainerRef}
-        className='flex flex-nowrap overflow-hidden '>
+        className='flex flex-nowrap overflow-hidden w-full lg:mx-8'>
         <div
           ref={firstimgcontainer}
           className='flex items-center justify-center flex-shrink-0'>
@@ -60,7 +62,7 @@ export default function Portoslider() {
               key={`logo-a-${index}`}
               src={logo.src}
               alt={logo.alt}
-              className='h-16 md:h-20 w-auto mx-8 md:mx-12'
+              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16'
             />
           ))}
         </div>
@@ -72,29 +74,41 @@ export default function Portoslider() {
               key={`logo-b-${index}`}
               src={logo.src}
               alt={logo.alt}
-              className='h-16 md:h-20 w-auto mx-8 md:mx-12'
+              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16'
+            />
+          ))}
+        </div>
+        <div
+          ref={thirdimgcontainer}
+          className='flex items-center justify-center flex-shrink-0'>
+          {logos.map((logo, index) => (
+            <img
+              key={`logo-b-${index}`}
+              src={logo.src}
+              alt={logo.alt}
+              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16'
             />
           ))}
         </div>
       </div>
-      <div>
-        <div className='absolute w-[100vw] overflow-hidden h-full inset-0 z-10 flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-          <div className='flex justify-between w-full h-full overflow-hidden'>
-            <div
-              className='
-                h-full w-24 
+      <div className='absolute w-[100vw] lg:w-full overflow-hidden h-full inset-0 z-10 flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+        <div className='flex justify-between w-full lg: h-full overflow-hidden'>
+          <div
+            className='
+                h-full w-24 lg:w-64
                 bg-white/10 
                 backdrop-blur-md 
                 [mask-image:linear-gradient(to_right,black_50%,transparent)]
+                lg:[mask-image:linear-gradient(to_right,black_30%,transparent)]
             '></div>
-            <div
-              className='
-                h-full w-24 
+          <div
+            className='
+                h-full w-24 lg:w-64
                 bg-white/10 
                 backdrop-blur-md 
                 [mask-image:linear-gradient(to_left,black_50%,transparent)]
+                 lg:[mask-image:linear-gradient(to_left,black_30%,transparent)]
             '></div>
-          </div>
         </div>
       </div>
     </div>
