@@ -62,7 +62,7 @@ export default function Portoslider() {
               key={`logo-a-${index}`}
               src={logo.src}
               alt={logo.alt}
-              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16'
+              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16 grayscale'
             />
           ))}
         </div>
@@ -74,7 +74,7 @@ export default function Portoslider() {
               key={`logo-b-${index}`}
               src={logo.src}
               alt={logo.alt}
-              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16'
+              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16 grayscale'
             />
           ))}
         </div>
@@ -86,7 +86,7 @@ export default function Portoslider() {
               key={`logo-b-${index}`}
               src={logo.src}
               alt={logo.alt}
-              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16'
+              className='h-16 md:h-20 lg:h-32 w-auto mx-8 md:mx-16 grayscale'
             />
           ))}
         </div>
@@ -95,20 +95,20 @@ export default function Portoslider() {
         <div className='flex justify-between w-full lg: h-full overflow-hidden'>
           <div
             className='
-                h-full w-24 lg:w-64
-                bg-white/10 
-                backdrop-blur-md 
-                [mask-image:linear-gradient(to_right,black_50%,transparent)]
+                h-full w-32 lg:w-64
+                bg-white/10
+                backdrop-blur-sm
+                [mask-image:linear-gradient(to_right,black_70%,transparent)]
                 lg:[mask-image:linear-gradient(to_right,black_30%,transparent)]
-            '></div>
+              '></div>
           <div
             className='
-                h-full w-24 lg:w-64
-                bg-white/10 
-                backdrop-blur-md 
-                [mask-image:linear-gradient(to_left,black_50%,transparent)]
-                 lg:[mask-image:linear-gradient(to_left,black_30%,transparent)]
-            '></div>
+                h-full w-32 lg:w-64
+                bg-white/10
+                backdrop-blur-sm
+                [mask-image:linear-gradient(to_left,black_70%,transparent)]
+                lg:[mask-image:linear-gradient(to_left,black_30%,transparent)]
+              '></div>
         </div>
       </div>
     </div>
