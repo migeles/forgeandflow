@@ -1,4 +1,3 @@
-"use client"
 import Portoslider from "./Portoslider";
 
 export default function Porto() {
