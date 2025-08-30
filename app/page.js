@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Hero from "@/Components/Hero/Hero";
-import Porto from "@/Components/Porto/Porto";
+import Porto from "../Components/Porto/Porto";
 import Navbar from "@/Components/Navbar/Navbar";
 import Goals from "@/Components/Goals/Goals";
 import Service from "@/Components/Service/Service";
