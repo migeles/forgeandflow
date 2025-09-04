@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="h-[30vh] md:h-[60vh]">
                 <Footerimage/>
             </div>
-            <div className="h-full">
+            <div className="h-full lg:pt-40">
                 <Footercontent/>
             </div>
         </div>

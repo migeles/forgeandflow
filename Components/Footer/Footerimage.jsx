@@ -1,12 +1,12 @@
-"use client"
+"use client";
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react"; // <-- Import useGSAP
 
-import girldancing from "@/Assets/Image/girl dancing.png";
-import girlfading from "@/Assets/Image/girlfading.png";
-import blacksmithing from "@/Assets/Image/blacksmithing.png";
+import girldancing from "@/Assets/Image/girl dancing.webp";
+import girlfading from "@/Assets/Image/girlfading.webp";
+import blacksmithing from "@/Assets/Image/blacksmithing.webp";
 
 // Register the ScrollTrigger plugin once
 gsap.registerPlugin(ScrollTrigger);
@@ -52,12 +52,13 @@ export default function Footerimage() {
 
   return (
     // The main container with its ref attached
-    <div ref={mainContainerRef} className='relative flex flex-col pl-10 lg:pl-[15vw]'>
+    <div
+      ref={mainContainerRef}
+      className='relative flex flex-col pl-10 lg:pl-[15vw]'>
       {/* Container for the first two images, with its ref */}
       <div
         ref={topImagesRef}
-        className='absolute -top-1/2 -translate-y-1/2 flex flex-row gap-10 lg:gap-20'
-      >
+        className='absolute -top-1/2 -translate-y-1/2 flex flex-row gap-10 lg:gap-20'>
         <img
           className={`${imageBaseClasses} h-28 min-w-[300px] md:h-32 md:min-w-[500px] lg:min-w-[800px] lg:h-64`}
           src={girldancing.src}
@@ -73,8 +74,7 @@ export default function Footerimage() {
       {/* Container for the third image, with its ref */}
       <div
         ref={bottomImageRef}
-        className='absolute translate-x-[50%] lg:translate-x-[20%] -top-1/2 translate-y-[100%] lg:translate-y-[80%]'
-      >
+        className='absolute translate-x-[50%] lg:translate-x-[20%] -top-1/2 translate-y-[100%] lg:translate-y-[80%]'>
         <img
           className={`${imageBaseClasses} h-28 min-w-[400px] md:h-32 md:min-w-[700px] lg:min-w-[1600px] lg:h-64`}
           src={blacksmithing.src}

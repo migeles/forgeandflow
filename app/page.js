@@ -8,7 +8,7 @@ import Footer from "@/Components/Footer/Footer";
 
 export default function Home() {
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow-hidden bg-[#efeeec]'>
       <Navbar />
       <Hero />
       <Porto />

@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import girlfloating from "@/Assets/Image/girl floating.png";
-import girlwalking from "@/Assets/Image/girl partying.png";
+import girlfloating from "@/Assets/Image/girl floating.webp";
+import girlwalking from "@/Assets/Image/girl partying.webp";
 import Textscroll from "./Textscroll";
 
 // Register the GSAP ScrollTrigger plugin
@@ -25,8 +25,8 @@ export default function Goals() {
         scrollTrigger: {
           trigger: imageContainer1.current,
           start: "top bottom", // Animation starts when top of container hits bottom of viewport
-          end: "bottom top",   // Animation ends when bottom of container hits top of viewport
-          scrub: true,       // Smoothly links animation to scrollbar position
+          end: "bottom top", // Animation ends when bottom of container hits top of viewport
+          scrub: true, // Smoothly links animation to scrollbar position
         },
       });
 
@@ -50,13 +50,15 @@ export default function Goals() {
   }, []); // Empty dependency array ensures this runs only once
 
   return (
-    <div className='w-full h-full pt-4'>
+    <div className='w-full h-full pt-4 lg:py-20'>
       <div>
         <Textscroll />
       </div>
       <div className='flex flex-col lg:flex-row gap-2 lg:gap-10 px-3 lg:px-5'>
         {/* Pass the ref to the parent container and apply overflow-hidden */}
-        <div ref={imageContainer1} className='w-full relative h-56  rounded-[25px] overflow-hidden'>
+        <div
+          ref={imageContainer1}
+          className='w-full relative h-56  rounded-[25px] overflow-hidden border-2'>
           <img
             // Added scale-125 to make the image slightly larger than its container for the parallax effect
             className='w-full h-full object-cover scale-125'
@@ -69,14 +71,17 @@ export default function Goals() {
           </p>
         </div>
 
-        <div ref={imageContainer2} className='w-full relative h-56 rounded-[25px] overflow-hidden'>
+        <div
+          ref={imageContainer2}
+          className='w-full relative h-56 rounded-[25px] overflow-hidden border-2'>
           <img
             className='object-cover w-full h-full object-center scale-125'
             src={girlwalking.src}
             alt=''
           />
           <p className='absolute right-0 top-1/2 text-xl lg:text-3xl lg:leading-[32px]  -translate-y-1/2 p-3 leading-[22px] text-white text-right'>
-            Potential customers<br /> are
+            Potential customers
+            <br /> are
             <span className='italic neue-bold'> everywhere</span>
           </p>
         </div>

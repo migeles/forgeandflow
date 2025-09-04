@@ -9,8 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // To add more, just import them and add them to the 'logos' array below.
 import logokawa from "../../Assets/Image/Logos/kawalogo.webp";
 import logokinghorse from "../../Assets/Image/Logos/Kinghorselogo.webp";
-import logoqro from "../../Assets/Image/Logos/QRO logo black.png";
-import logokomkomcha from "../../Assets/Image/Logos/komkomcha logo.png";
+import logoqro from "../../Assets/Image/Logos/QRO logo black.webp";
+import logokomkomcha from "../../Assets/Image/Logos/komkomcha logo.webp";
 
 // 1. Create an array of your logos. This makes the component flexible.
 const logos = [

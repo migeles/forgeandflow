@@ -55,7 +55,7 @@ export default function DesktopNav({ navLinks }) {
         className='w-full flex flex-row gap-12 relative group/ulcontainer'>
         <span
           id='bghover'
-          className='-z-10 bg-white backdrop-blur-2xl h-10 absolute rounded-full top-1/2 -translate-y-1/2 pointer-events-none opacity-0 px-4 py-2 group-hover/ulcontainer:opacity-100 transition-opacity duration-300 ease-in-out'
+          className='-z-10 bg-[#efeeec] backdrop-blur-2xl h-10 absolute rounded-full top-1/2 -translate-y-1/2 pointer-events-none opacity-0 px-4 py-2 group-hover/ulcontainer:opacity-100 transition-opacity duration-300 ease-in-out'
           style={{ width: "0px"}}></span>
         {navLinks.map((link) => (
           <li key={link.title} ref={addToRefs} className='group'>

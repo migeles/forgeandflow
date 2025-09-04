@@ -3,7 +3,7 @@ import Portoslider from "./Portoslider";
 export default function Porto() {
   return (
     // 1. REMOVED w-screen and max-w-screen from the parent
-    <div className='w-full h-full flex flex-col lg:flex-row bg-white px-6 pt-7 gap-2 lg:justify-between lg:gap-20 lg:items-center'>
+    <div className='w-full h-full flex flex-col lg:flex-row lg:pt-20 bg-[#efeeec] px-6 pt-7 gap-2 lg:justify-between lg:gap-20 lg:items-center'>
       <div className='w-auto lg:w-auto'>
         <h1 className='neue-medium text-md text-nowrap'>
           Brands We <br className='hidden lg:block' /> Worked With
